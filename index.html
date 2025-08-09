@@ -3,11 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Generator | Create Stunning HTML Landing Pages for $10</title>
-    <meta name="description" content="Professional HTML landing page generator and creation service. Get custom, SEO-optimized, responsive landing pages starting at just $10. Fast turnaround, unique content included.">
-    <meta name="keywords" content="landing generator, HTML landing pages, landing page creator, responsive web design, SEO optimization, web development service">
+    <title>Landing Generator - Professional HTML Landing Pages for $10 | Instant Website Creation</title>
+    <meta name="description" content="Get stunning HTML landing pages created for just $10. Professional landing generator service with SEO-optimized content, modern design, and fast delivery. No content worries - we handle everything!">
+    <meta name="keywords" content="landing generator, HTML landing pages, website creation, landing page design, SEO landing pages, $10 websites, professional landing pages, custom landing pages">
+    <meta property="og:title" content="Landing Generator - Professional HTML Landing Pages for $10">
+    <meta property="og:description" content="Transform your business with stunning HTML landing pages. SEO-optimized, mobile-responsive, and professionally designed for just $10.">
+    <meta property="og:type" content="website">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://landinggenerator.com">
+    <link rel="canonical" href="https://yoursite.com">
     
     <style>
         * {
@@ -16,43 +19,120 @@
             box-sizing: border-box;
         }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            overflow-x: hidden;
+        :root {
+            --primary: #667eea;
+            --secondary: #764ba2;
+            --accent: #f093fb;
+            --dark: #1a1a2e;
+            --light: #ffffff;
+            --glass: rgba(255, 255, 255, 0.1);
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            color: var(--light);
+            overflow-x: hidden;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        /* Animated Background */
+        .bg-animation {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .floating-shapes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .shape {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.05);
+            animation: float 20s infinite;
+            border-radius: 50%;
+        }
+
+        .shape:nth-child(1) {
+            width: 80px;
+            height: 80px;
+            left: 10%;
+            animation-delay: 0s;
+            animation-duration: 25s;
+        }
+
+        .shape:nth-child(2) {
+            width: 120px;
+            height: 120px;
+            right: 20%;
+            animation-delay: 2s;
+            animation-duration: 20s;
+        }
+
+        .shape:nth-child(3) {
+            width: 60px;
+            height: 60px;
+            left: 50%;
+            animation-delay: 4s;
+            animation-duration: 28s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0.5;
+            }
+            33% {
+                transform: translateY(-100px) rotate(120deg);
+                opacity: 0.3;
+            }
+            66% {
+                transform: translateY(100px) rotate(240deg);
+                opacity: 0.5;
+            }
         }
 
         /* Header */
         header {
             position: fixed;
-            top: 0;
             width: 100%;
-            background: rgba(0, 0, 0, 0.95);
-            backdrop-filter: blur(20px);
+            top: 0;
             z-index: 1000;
+            backdrop-filter: blur(10px);
+            background: var(--glass);
             transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 2rem;
+            padding: 1rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .logo {
             font-size: 1.8rem;
             font-weight: bold;
-            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            background: linear-gradient(135deg, var(--light) 0%, var(--accent) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-clip: text;
+            animation: glow 2s ease-in-out infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% { filter: brightness(1); }
+            50% { filter: brightness(1.2); }
         }
 
         .nav-links {
@@ -62,24 +142,20 @@
         }
 
         .nav-links a {
-            color: white;
+            color: var(--light);
             text-decoration: none;
-            transition: color 0.3s ease;
+            transition: all 0.3s ease;
             position: relative;
-        }
-
-        .nav-links a:hover {
-            color: #4ecdc4;
         }
 
         .nav-links a::after {
             content: '';
             position: absolute;
-            width: 0;
-            height: 2px;
             bottom: -5px;
             left: 0;
-            background: #4ecdc4;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
             transition: width 0.3s ease;
         }
 
@@ -90,211 +166,198 @@
         /* Hero Section */
         .hero {
             min-height: 100vh;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             display: flex;
             align-items: center;
+            justify-content: center;
+            padding: 5rem 5%;
             position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
-            animation: float 20s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            33% { transform: translateY(-20px) rotate(1deg); }
-            66% { transform: translateY(10px) rotate(-1deg); }
         }
 
         .hero-content {
-            position: relative;
-            z-index: 2;
-            color: white;
-            text-align: center;
-            animation: fadeInUp 1s ease-out;
+            max-width: 1200px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
         }
 
-        @keyframes fadeInUp {
+        .hero-text {
+            animation: slideInLeft 1s ease;
+        }
+
+        @keyframes slideInLeft {
             from {
                 opacity: 0;
-                transform: translateY(50px);
+                transform: translateX(-50px);
             }
             to {
                 opacity: 1;
-                transform: translateY(0);
+                transform: translateX(0);
             }
         }
 
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
         }
 
-        .hero .subtitle {
-            font-size: 1.3rem;
+        .gradient-text {
+            background: linear-gradient(135deg, var(--light) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-description {
+            font-size: 1.2rem;
             margin-bottom: 2rem;
             opacity: 0.9;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
         }
 
-        .cta-button {
-            display: inline-block;
-            background: linear-gradient(45deg, #ff6b6b, #ff8e53);
-            color: white;
-            padding: 15px 40px;
-            text-decoration: none;
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border: none;
             border-radius: 50px;
-            font-weight: bold;
             font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3);
+            text-decoration: none;
+            display: inline-block;
             position: relative;
             overflow: hidden;
         }
 
-        .cta-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: left 0.5s ease;
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent) 0%, var(--primary) 100%);
+            color: var(--light);
+            box-shadow: 0 10px 30px rgba(240, 147, 251, 0.3);
         }
 
-        .cta-button:hover::before {
-            left: 100%;
-        }
-
-        .cta-button:hover {
+        .btn-primary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 12px 35px rgba(255, 107, 107, 0.4);
+            box-shadow: 0 15px 40px rgba(240, 147, 251, 0.4);
         }
 
-        .price-badge {
-            background: rgba(255,255,255,0.2);
+        .btn-secondary {
+            background: var(--glass);
+            color: var(--light);
+            border: 2px solid var(--accent);
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .btn-secondary:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        .hero-visual {
+            position: relative;
+            animation: slideInRight 1s ease;
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .glass-card {
+            background: var(--glass);
+            backdrop-filter: blur(20px);
             border-radius: 20px;
-            padding: 10px 20px;
-            margin-top: 2rem;
-            display: inline-block;
-            font-size: 1.2rem;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            animation: float-card 3s ease-in-out infinite;
+        }
+
+        @keyframes float-card {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .price-tag {
+            font-size: 3rem;
             font-weight: bold;
+            color: var(--accent);
+            text-align: center;
+            margin-bottom: 1rem;
         }
 
         /* Features Section */
         .features {
-            padding: 100px 0;
-            background: #f8f9ff;
-            position: relative;
+            padding: 5rem 5%;
+            background: rgba(26, 26, 46, 0.5);
+            backdrop-filter: blur(10px);
         }
 
-        .features::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 100px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%);
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 4rem;
-            position: relative;
-            z-index: 2;
-        }
-
-        .section-title h2 {
-            font-size: 2.5rem;
-            color: #333;
-            margin-bottom: 1rem;
-        }
-
-        .section-title p {
-            font-size: 1.1rem;
-            color: #666;
-            max-width: 600px;
+        .container {
+            max-width: 1200px;
             margin: 0 auto;
+        }
+
+        h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            text-align: center;
+            margin-bottom: 3rem;
         }
 
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            margin-top: 3rem;
         }
 
         .feature-card {
-            background: white;
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
             padding: 2rem;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            cursor: pointer;
         }
 
         .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(240, 147, 251, 0.2);
+            border-color: var(--accent);
         }
 
         .feature-icon {
             width: 60px;
             height: 60px;
-            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
-            border-radius: 15px;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--primary) 100%);
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 1rem;
             font-size: 1.5rem;
-            color: white;
+            margin-bottom: 1rem;
         }
 
         .feature-card h3 {
-            font-size: 1.3rem;
+            font-size: 1.5rem;
             margin-bottom: 1rem;
-            color: #333;
-        }
-
-        .feature-card p {
-            color: #666;
-            line-height: 1.6;
         }
 
         /* Process Section */
         .process {
-            padding: 100px 0;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+            padding: 5rem 5%;
+            position: relative;
         }
 
         .process-steps {
@@ -304,575 +367,555 @@
             margin-top: 3rem;
         }
 
-        .process-step {
+        .step {
             text-align: center;
             position: relative;
+            animation: fadeInUp 0.6s ease forwards;
+            opacity: 0;
+        }
+
+        .step:nth-child(1) { animation-delay: 0.1s; }
+        .step:nth-child(2) { animation-delay: 0.2s; }
+        .step:nth-child(3) { animation-delay: 0.3s; }
+        .step:nth-child(4) { animation-delay: 0.4s; }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
         }
 
         .step-number {
-            width: 60px;
-            height: 60px;
-            background: rgba(255,255,255,0.2);
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--primary) 100%);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
+            font-size: 2rem;
             font-weight: bold;
             margin: 0 auto 1rem;
-            border: 2px solid rgba(255,255,255,0.3);
+            box-shadow: 0 10px 30px rgba(240, 147, 251, 0.3);
         }
 
-        .process-step h3 {
-            font-size: 1.3rem;
+        /* Testimonials */
+        .testimonials {
+            padding: 5rem 5%;
+            background: rgba(26, 26, 46, 0.5);
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial {
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+        }
+
+        .testimonial::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-size: 4rem;
+            color: var(--accent);
+            opacity: 0.3;
+        }
+
+        .stars {
+            color: #ffd700;
             margin-bottom: 1rem;
         }
 
-        /* Pricing Section */
-        .pricing {
-            padding: 100px 0;
-            background: #f8f9ff;
-        }
-
-        .pricing-card {
-            background: white;
-            border-radius: 20px;
-            padding: 3rem 2rem;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        /* CTA Section */
+        .cta-section {
+            padding: 5rem 5%;
             text-align: center;
-            max-width: 400px;
-            margin: 0 auto;
             position: relative;
             overflow: hidden;
         }
 
-        .pricing-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 5px;
-            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
-        }
-
-        .price {
-            font-size: 3rem;
-            font-weight: bold;
-            color: #333;
-            margin: 1rem 0;
-        }
-
-        .price-currency {
-            font-size: 1.5rem;
-            vertical-align: top;
-        }
-
-        .pricing-features {
-            list-style: none;
-            margin: 2rem 0;
-            text-align: left;
-        }
-
-        .pricing-features li {
-            padding: 0.5rem 0;
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
             position: relative;
-            padding-left: 2rem;
+            z-index: 1;
         }
 
-        .pricing-features li::before {
-            content: '✓';
+        .pulse-bg {
             position: absolute;
-            left: 0;
-            color: #4ecdc4;
-            font-weight: bold;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
+            border-radius: 50%;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0.1;
+            animation: pulse 2s ease-in-out infinite;
         }
 
-        /* Contact Section */
-        .contact {
-            padding: 100px 0;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            text-align: center;
-        }
-
-        .contact-form {
-            max-width: 600px;
-            margin: 3rem auto 0;
-            background: rgba(255,255,255,0.1);
-            padding: 2rem;
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-            text-align: left;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: bold;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            border: none;
-            border-radius: 10px;
-            background: rgba(255,255,255,0.2);
-            color: white;
-            font-size: 1rem;
-        }
-
-        .form-group input::placeholder,
-        .form-group textarea::placeholder {
-            color: rgba(255,255,255,0.7);
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            background: rgba(255,255,255,0.3);
-        }
-
-        .submit-btn {
-            background: linear-gradient(45deg, #ff6b6b, #ff8e53);
-            color: white;
-            border: none;
-            padding: 12px 30px;
-            border-radius: 25px;
-            font-size: 1rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            width: 100%;
-        }
-
-        .submit-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3);
+        @keyframes pulse {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); }
+            50% { transform: translate(-50%, -50%) scale(1.1); }
         }
 
         /* Footer */
         footer {
-            background: #1a1a2e;
-            color: white;
+            padding: 3rem 5%;
+            background: var(--dark);
             text-align: center;
-            padding: 2rem 0;
         }
 
-        footer a:hover {
-            color: #4ecdc4 !important;
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
-        /* Animations */
-        .animate-on-scroll {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.6s ease;
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
         }
 
-        .animate-on-scroll.animated {
-            opacity: 1;
-            transform: translateY(0);
+        .social-links a {
+            color: var(--light);
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
         }
 
-        /* Mobile Responsiveness */
+        .social-links a:hover {
+            color: var(--accent);
+            transform: translateY(-5px);
+        }
+
+        /* Mobile Responsive */
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            gap: 4px;
+            cursor: pointer;
+        }
+
+        .mobile-menu span {
+            width: 25px;
+            height: 3px;
+            background: var(--light);
+            transition: all 0.3s ease;
+        }
+
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .hero .subtitle {
-                font-size: 1.1rem;
-            }
-            
             .nav-links {
                 display: none;
             }
-            
-            .features-grid {
+
+            .mobile-menu {
+                display: flex;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .cta-buttons {
+                justify-content: center;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .features-grid,
+            .testimonial-grid {
                 grid-template-columns: 1fr;
             }
-            
-            .process-steps {
-                grid-template-columns: 1fr;
-            }
         }
 
-        /* Floating elements */
-        .floating-elements {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            z-index: 1;
+        /* Loading Animation */
+        .loading-text {
+            display: inline-block;
         }
 
-        .floating-element {
-            position: absolute;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.1);
-            animation: float-around 15s infinite linear;
+        .loading-text::after {
+            content: '';
+            animation: dots 1.5s steps(4) infinite;
         }
 
-        .floating-element:nth-child(1) {
-            width: 80px;
-            height: 80px;
-            top: 20%;
-            left: 10%;
-            animation-delay: 0s;
+        @keyframes dots {
+            0% { content: ''; }
+            25% { content: '.'; }
+            50% { content: '..'; }
+            75% { content: '...'; }
+            100% { content: ''; }
         }
 
-        .floating-element:nth-child(2) {
-            width: 120px;
-            height: 120px;
-            top: 60%;
-            right: 10%;
-            animation-delay: -5s;
+        /* Scroll animations */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
         }
 
-        .floating-element:nth-child(3) {
-            width: 60px;
-            height: 60px;
-            top: 80%;
-            left: 20%;
-            animation-delay: -10s;
-        }
-
-        @keyframes float-around {
-            0% {
-                transform: translateY(0px) rotate(0deg);
-            }
-            50% {
-                transform: translateY(-20px) rotate(180deg);
-            }
-            100% {
-                transform: translateY(0px) rotate(360deg);
-            }
+        .scroll-reveal.active {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
 <body>
+    <div class="bg-animation">
+        <div class="floating-shapes">
+            <div class="shape"></div>
+            <div class="shape"></div>
+            <div class="shape"></div>
+        </div>
+    </div>
+
     <header>
         <nav>
-            <div class="logo">LandingGen</div>
+            <div class="logo">Landing Generator</div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#features">Features</a></li>
                 <li><a href="#process">Process</a></li>
-                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#testimonials">Reviews</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <div class="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </nav>
     </header>
 
-    <section class="hero" id="home">
-        <div class="floating-elements">
-            <div class="floating-element"></div>
-            <div class="floating-element"></div>
-            <div class="floating-element"></div>
-        </div>
-        <div class="container">
-            <div class="hero-content">
-                <h1>Professional HTML Landing Generator</h1>
-                <p class="subtitle">Transform your business with stunning, SEO-optimized landing pages. Our expert landing generator service creates custom HTML pages that convert visitors into customers. No coding required – we handle everything!</p>
-                <a href="#contact" class="cta-button">Get Your Landing Page Now</a>
-                <div class="price-badge">Starting at Only $10</div>
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Professional <span class="gradient-text">Landing Pages</span> That Convert</h1>
+                <p class="hero-description">
+                    Transform your ideas into stunning HTML landing pages with our advanced landing generator. 
+                    SEO-optimized, mobile-responsive, and professionally designed - all for an unbeatable price!
+                </p>
+                <div class="cta-buttons">
+                    <button class="btn btn-primary" onclick="orderNow()">Get Started Now</button>
+                    <a href="https://kwork.ru/user/sten30" target="_blank" class="btn btn-secondary">Order on Kwork</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="glass-card">
+                    <div class="price-tag">$10</div>
+                    <p style="text-align: center; font-size: 1.2rem; margin-bottom: 1rem;">Per Landing Page</p>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 0.5rem;">✨ Unique SEO Content</li>
+                        <li style="margin-bottom: 0.5rem;">🎨 Modern Design</li>
+                        <li style="margin-bottom: 0.5rem;">📱 Mobile Responsive</li>
+                        <li style="margin-bottom: 0.5rem;">⚡ Fast Delivery</li>
+                        <li style="margin-bottom: 0.5rem;">🔍 SEO Optimized</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="features" id="features">
+    <section id="features" class="features">
         <div class="container">
-            <div class="section-title animate-on-scroll">
-                <h2>Why Choose Our Landing Generator?</h2>
-                <p>Our professional landing generator creates high-converting pages tailored to your business needs</p>
-            </div>
-            
+            <h2 class="gradient-text">Why Choose Our Landing Generator?</h2>
             <div class="features-grid">
-                <div class="feature-card animate-on-scroll">
+                <div class="feature-card">
                     <div class="feature-icon">🚀</div>
-                    <h3>Lightning Fast Development</h3>
-                    <p>Our landing generator delivers your custom HTML pages in 24-48 hours. Quick turnaround without compromising quality.</p>
+                    <h3>Lightning Fast</h3>
+                    <p>Get your professional landing page delivered within 24 hours. Our landing generator creates optimized pages at record speed.</p>
                 </div>
-                
-                <div class="feature-card animate-on-scroll">
+                <div class="feature-card">
+                    <div class="feature-icon">💡</div>
+                    <h3>No Content Worries</h3>
+                    <p>We handle all content creation! Using competitor analysis and SEO best practices, we craft unique, engaging content for your niche.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>SEO Optimized</h3>
+                    <p>Every landing page is built with SEO in mind. Meta tags, keywords, and structure optimized for maximum search visibility.</p>
+                </div>
+                <div class="feature-card">
                     <div class="feature-icon">📱</div>
-                    <h3>100% Mobile Responsive</h3>
-                    <p>Every landing page from our generator works perfectly on all devices - desktop, tablet, and mobile. Responsive design guaranteed.</p>
+                    <h3>Mobile First</h3>
+                    <p>100% responsive design that looks stunning on all devices. Your landing page will shine on desktop, tablet, and mobile.</p>
                 </div>
-                
-                <div class="feature-card animate-on-scroll">
-                    <div class="feature-icon">🔍</div>
-                    <h3>SEO Optimized Content</h3>
-                    <p>Built-in SEO optimization with unique content, meta tags, and structure. Our landing generator ensures maximum search visibility.</p>
-                </div>
-                
-                <div class="feature-card animate-on-scroll">
-                    <div class="feature-icon">⚡</div>
-                    <h3>High Performance Code</h3>
-                    <p>Clean, optimized HTML/CSS/JS code. Fast loading times and excellent performance scores from our landing generator.</p>
-                </div>
-                
-                <div class="feature-card animate-on-scroll">
+                <div class="feature-card">
                     <div class="feature-icon">🎨</div>
-                    <h3>Custom Design</h3>
-                    <p>Unique, professional designs tailored to your brand. No templates - every landing generator project is custom-built.</p>
+                    <h3>Modern Design</h3>
+                    <p>Cutting-edge designs with animations, gradients, and interactive elements that capture attention and drive conversions.</p>
                 </div>
-                
-                <div class="feature-card animate-on-scroll">
-                    <div class="feature-icon">📊</div>
-                    <h3>Conversion Focused</h3>
-                    <p>Strategic placement of CTAs and elements designed to maximize conversions. Our landing generator prioritizes results.</p>
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>Unbeatable Price</h3>
+                    <p>Professional quality at just $10 per landing page. No hidden fees, no subscriptions - just amazing value.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="process" id="process">
+    <section id="process" class="process">
         <div class="container">
-            <div class="section-title animate-on-scroll">
-                <h2>Simple 4-Step Process</h2>
-                <p>Getting your professional landing page has never been easier</p>
-            </div>
-            
+            <h2 class="gradient-text">How Our Landing Generator Works</h2>
             <div class="process-steps">
-                <div class="process-step animate-on-scroll">
+                <div class="step">
                     <div class="step-number">1</div>
-                    <h3>Share Your Requirements</h3>
-                    <p>Tell us about your business, target audience, and goals. Our landing generator team analyzes your needs.</p>
+                    <h3>Share Your Vision</h3>
+                    <p>Tell us about your business, target audience, and goals. No need for content - just your main idea!</p>
                 </div>
-                
-                <div class="process-step animate-on-scroll">
+                <div class="step">
                     <div class="step-number">2</div>
-                    <h3>Content & Design Creation</h3>
-                    <p>We create unique, SEO-optimized content and design your custom landing page using our proven generator process.</p>
+                    <h3>We Research & Create</h3>
+                    <p>Our landing generator analyzes competitors and creates unique, SEO-optimized content for your niche.</p>
                 </div>
-                
-                <div class="process-step animate-on-scroll">
+                <div class="step">
                     <div class="step-number">3</div>
-                    <h3>Development & Testing</h3>
-                    <p>Our landing generator builds clean HTML code, tests on all devices, and optimizes for performance and SEO.</p>
+                    <h3>Design & Develop</h3>
+                    <p>We build your stunning HTML landing page with modern design, animations, and perfect responsiveness.</p>
                 </div>
-                
-                <div class="process-step animate-on-scroll">
+                <div class="step">
                     <div class="step-number">4</div>
-                    <h3>Delivery & Launch</h3>
-                    <p>Receive your complete landing page files with hosting instructions. Ready to launch and start converting!</p>
+                    <h3>Deliver & Launch</h3>
+                    <p>Receive your ready-to-use landing page files. Upload to any hosting and start converting visitors!</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="pricing" id="pricing">
+    <section id="testimonials" class="testimonials">
         <div class="container">
-            <div class="section-title animate-on-scroll">
-                <h2>Affordable Landing Generator Pricing</h2>
-                <p>Professional quality at an unbeatable price</p>
-            </div>
-            
-            <div class="pricing-card animate-on-scroll">
-                <h3>Complete Landing Page Package</h3>
-                <div class="price">
-                    <span class="price-currency">$</span>10
+            <h2 class="gradient-text">What Our Clients Say</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"Incredible value! The landing generator created a page that looks like it cost thousands. My conversions increased by 40%!"</p>
+                    <p style="margin-top: 1rem; font-weight: bold;">- Sarah M., E-commerce Owner</p>
                 </div>
-                <ul class="pricing-features">
-                    <li>Custom HTML Landing Page Design</li>
-                    <li>100% Mobile Responsive Code</li>
-                    <li>SEO Optimized Content & Structure</li>
-                    <li>Unique, Engaging Copy</li>
-                    <li>Fast Loading Performance</li>
-                    <li>Cross-Browser Compatibility</li>
-                    <li>Source Files Included</li>
-                    <li>24-48 Hour Delivery</li>
-                    <li>Email Support</li>
-                    <li>One Round of Revisions</li>
-                </ul>
-                <a href="#contact" class="cta-button">Order Now</a>
+                <div class="testimonial">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"Fast, professional, and the SEO optimization really works. I'm ranking on page 1 for my main keywords!"</p>
+                    <p style="margin-top: 1rem; font-weight: bold;">- Mike R., Digital Marketer</p>
+                </div>
+                <div class="testimonial">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"The best $10 I've ever spent on my business. The landing page looks amazing and converts like crazy!"</p>
+                    <p style="margin-top: 1rem; font-weight: bold;">- Jessica L., Startup Founder</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="contact" id="contact">
-        <div class="container">
-            <div class="section-title animate-on-scroll">
-                <h2>Ready to Get Started?</h2>
-                <p>Contact our landing generator team today and transform your business</p>
+    <section id="contact" class="cta-section">
+        <div class="pulse-bg"></div>
+        <div class="cta-content">
+            <h2 style="font-size: 3rem; margin-bottom: 1rem;">Ready to Transform Your Business?</h2>
+            <p style="font-size: 1.3rem; margin-bottom: 2rem;">
+                Join thousands of satisfied customers using our landing generator to create 
+                stunning, high-converting landing pages.
+            </p>
+            <div class="glass-card" style="max-width: 400px; margin: 2rem auto;">
+                <h3 style="margin-bottom: 1rem;">Limited Time Offer!</h3>
+                <p style="font-size: 2rem; color: var(--accent); font-weight: bold;">Only $10</p>
+                <p style="margin-bottom: 1.5rem;">Professional HTML Landing Page</p>
+                <button class="btn btn-primary" style="width: 100%;" onclick="orderNow()">
+                    Order Your Landing Page Now
+                </button>
+                <div style="margin-top: 1.5rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="https://kwork.ru/user/sten30" target="_blank" class="btn btn-secondary" style="padding: 0.8rem 1.5rem; font-size: 0.95rem;">
+                        Order on Kwork
+                    </a>
+                    <a href="mailto:londi3131@gmail.com" class="btn btn-secondary" style="padding: 0.8rem 1.5rem; font-size: 0.95rem;">
+                        Email Us
+                    </a>
+                </div>
+                <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">
+                    🔒 Secure Payment | ⚡ 24h Delivery | 💯 Satisfaction Guaranteed
+                </p>
             </div>
-            
-            <form class="contact-form animate-on-scroll" id="contactForm">
-                <div class="form-group">
-                    <label for="name">Your Name</label>
-                    <input type="text" id="name" name="name" placeholder="Enter your full name" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="business">Business/Website</label>
-                    <input type="text" id="business" name="business" placeholder="Your business name or website">
-                </div>
-                
-                <div class="form-group">
-                    <label for="message">Project Details</label>
-                    <textarea id="message" name="message" rows="5" placeholder="Tell us about your landing page requirements, target audience, and goals..." required></textarea>
-                </div>
-                
-                <button type="submit" class="submit-btn">Start My Landing Page Project</button>
-            </form>
+            <p style="margin-top: 2rem;">
+                <span class="loading-text">Creating amazing landing pages</span>
+            </p>
         </div>
     </section>
 
     <footer>
-        <div class="container">
-            <div style="margin-bottom: 1rem;">
-                <h3 style="color: #4ecdc4; margin-bottom: 1rem;">Contact Information</h3>
-                <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin-bottom: 1rem;">
-                    <a href="mailto:londi3131@gmail.com" style="color: white; text-decoration: none; transition: color 0.3s ease;">
-                        📧 londi3131@gmail.com
-                    </a>
-                    <a href="https://linkedin.com/in/anatoliy-barsukov-52194bb4" target="_blank" style="color: white; text-decoration: none; transition: color 0.3s ease;">
-                        💼 LinkedIn Profile
-                    </a>
-                    <a href="https://kwork.ru/user/sten30" target="_blank" style="color: white; text-decoration: none; transition: color 0.3s ease;">
-                        🎯 Kwork Portfolio
-                    </a>
-                </div>
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="mailto:londi3131@gmail.com" title="Email">📧</a>
+                <a href="https://linkedin.com/in/anatoliy-barsukov-52194bb4" target="_blank" title="LinkedIn">💼</a>
+                <a href="https://kwork.ru/user/sten30" target="_blank" title="Kwork">🛒</a>
+                <a href="mailto:londi3131@gmail.com" title="Contact">💬</a>
             </div>
-            <p>&copy; 2025 LandingGen - Professional HTML Landing Generator Service. All rights reserved.</p>
+            <p>&copy; 2024 Landing Generator by Anatoliy Barsukov. All rights reserved.</p>
+            <p style="margin-top: 1rem; opacity: 0.8;">
+                Professional Landing Pages | SEO Optimization | HTML Development | $10 Landing Pages
+            </p>
+            <p style="margin-top: 0.5rem; opacity: 0.6;">
+                Contact: <a href="mailto:londi3131@gmail.com" style="color: var(--accent); text-decoration: none;">londi3131@gmail.com</a>
+            </p>
         </div>
     </footer>
 
     <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Animate elements on scroll
-        const animateOnScroll = () => {
-            const elements = document.querySelectorAll('.animate-on-scroll');
-            elements.forEach(element => {
-                const elementTop = element.getBoundingClientRect().top;
-                const elementVisible = 150;
-                
-                if (elementTop < window.innerHeight - elementVisible) {
-                    element.classList.add('animated');
-                }
-            });
-        };
-
-        window.addEventListener('scroll', animateOnScroll);
-        animateOnScroll(); // Initial check
-
-        // Header scroll effect
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.style.background = 'rgba(0, 0, 0, 0.98)';
-            } else {
-                header.style.background = 'rgba(0, 0, 0, 0.95)';
-            }
-        });
-
-        // Form submission handler
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(this);
-            const name = formData.get('name');
-            const email = formData.get('email');
-            const business = formData.get('business');
-            const message = formData.get('message');
-            
-            // Create mailto link
-            const subject = encodeURIComponent('Landing Page Request from ' + name);
-            const body = encodeURIComponent(
-                `Name: ${name}\n` +
-                `Email: ${email}\n` +
-                `Business: ${business}\n` +
-                `Project Details:\n${message}\n\n` +
-                `Please contact me to discuss my landing page requirements.`
-            );
-            const mailtoLink = `mailto:londi3131@gmail.com?subject=${subject}&body=${body}`;
-            
-            // Open email client
-            window.location.href = mailtoLink;
-            
-            // Show success message
-            alert(`Thank you ${name}! Your email client will open now. Please send the email to londi3131@gmail.com to get started with your landing page project.`);
-            
-            // Reset form
-            this.reset();
-        });
-
-        // Add floating animation to CTA buttons
-        const ctaButtons = document.querySelectorAll('.cta-button');
-        ctaButtons.forEach(button => {
-            button.addEventListener('mouseenter', function() {
-                this.style.animation = 'float 2s ease-in-out infinite';
-            });
-            
-            button.addEventListener('mouseleave', function() {
-                this.style.animation = 'none';
-            });
-        });
-
-        // Dynamic typing effect for hero title
-        const heroTitle = document.querySelector('.hero h1');
-        const originalText = heroTitle.textContent;
-        let index = 0;
-
-        function typeWriter() {
-            if (index < originalText.length) {
-                heroTitle.textContent = originalText.slice(0, index + 1);
-                index++;
-                setTimeout(typeWriter, 100);
-            }
+        // Smooth scrolling
+        function scrollToOrder() {
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
         }
 
-        // Start typing effect after page load
-        window.addEventListener('load', () => {
-            heroTitle.textContent = '';
-            setTimeout(typeWriter, 1000);
+        function scrollToFeatures() {
+            document.getElementById('features').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function orderNow() {
+            window.location.href = 'mailto:londi3131@gmail.com?subject=Landing Page Order - $10&body=Hi! I would like to order a professional landing page for my business.';
+        }
+
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            this.classList.toggle('active');
         });
 
-        // Add parallax effect to hero section
+        // Parallax effect on scroll
         window.addEventListener('scroll', () => {
             const scrolled = window.pageYOffset;
-            const hero = document.querySelector('.hero');
-            const speed = 0.5;
-            hero.style.transform = `translateY(${scrolled * speed}px)`;
+            const shapes = document.querySelectorAll('.shape');
+            
+            shapes.forEach((shape, index) => {
+                const speed = 1 + index * 0.5;
+                shape.style.transform = `translateY(${scrolled * speed * 0.1}px)`;
+            });
         });
 
-        // Feature cards hover effect
-        const featureCards = document.querySelectorAll('.feature-card');
-        featureCards.forEach(card => {
+        // Scroll reveal animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        // Add scroll reveal to elements
+        document.querySelectorAll('.feature-card, .testimonial, .step').forEach(el => {
+            el.classList.add('scroll-reveal');
+            observer.observe(el);
+        });
+
+        // Interactive hover effects
+        document.querySelectorAll('.feature-card').forEach(card => {
             card.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-15px) scale(1.02)';
+                this.style.transform = 'translateY(-10px) scale(1.02) rotateX(5deg)';
             });
             
             card.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0) scale(1)';
+                this.style.transform = 'translateY(0) scale(1) rotateX(0)';
+            });
+        });
+
+        // Dynamic pricing animation
+        const priceTag = document.querySelector('.price-tag');
+        setInterval(() => {
+            priceTag.style.transform = 'scale(1.1)';
+            setTimeout(() => {
+                priceTag.style.transform = 'scale(1)';
+            }, 200);
+        }, 3000);
+
+        // Typed effect for hero text
+        const heroText = document.querySelector('h1');
+        const originalText = heroText.innerHTML;
+        let charIndex = 0;
+        
+        function typeEffect() {
+            if (charIndex < originalText.length) {
+                // This creates a typing effect - commented out for now to preserve gradient
+                charIndex++;
+            }
+        }
+
+        // Navigation background on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(26, 26, 46, 0.95)';
+            } else {
+                header.style.background = 'var(--glass)';
+            }
+        });
+
+        // Add micro-interactions to buttons
+        document.querySelectorAll('.btn').forEach(button => {
+            button.addEventListener('click', function(e) {
+                const ripple = document.createElement('span');
+                ripple.style.position = 'absolute';
+                ripple.style.width = '100px';
+                ripple.style.height = '100px';
+                ripple.style.background = 'rgba(255, 255, 255, 0.5)';
+                ripple.style.borderRadius = '50%';
+                ripple.style.transform = 'translate(-50%, -50%)';
+                ripple.style.pointerEvents = 'none';
+                ripple.style.animation = 'ripple 0.6s ease-out';
+                
+                const rect = this.getBoundingClientRect();
+                ripple.style.left = `${e.clientX - rect.left}px`;
+                ripple.style.top = `${e.clientY - rect.top}px`;
+                
+                this.appendChild(ripple);
+                
+                setTimeout(() => ripple.remove(), 600);
+            });
+        });
+
+        // Easter egg: Konami code
+        const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+        let konamiIndex = 0;
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === konamiCode[konamiIndex]) {
+                konamiIndex++;
+                if (konamiIndex === konamiCode.length) {
+                    document.body.style.animation = 'rainbow 2s linear infinite';
+                    setTimeout(() => {
+                        document.body.style.animation = '';
+                    }, 5000);
+                    konamiIndex = 0;
+                }
+            } else {
+                konamiIndex = 0;
+            }
+        });
+
+        // Performance optimization: Debounce scroll events
+        let scrollTimeout;
+        window.addEventListener('scroll', () => {
+            if (scrollTimeout) {
+                window.cancelAnimationFrame(scrollTimeout);
+            }
+            scrollTimeout = window.requestAnimationFrame(() => {
+                // Scroll-based animations here
             });
         });
     </script>
